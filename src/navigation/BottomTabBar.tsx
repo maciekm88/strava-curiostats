@@ -1,8 +1,17 @@
 import React from 'react';
 import {Pressable, StyleSheet, Text, View} from 'react-native';
 import {SafeAreaView} from 'react-native-safe-area-context';
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 const BottomTabBar = ({state, descriptors, navigation}: any) => {
+  const icons = {
+    Main: 'domain',
+    Calories: 'food',
+    Distance: 'map-marker-distance',
+    Elevation: 'elevation-rise',
+    Map: 'map',
+  };
+
   return (
     <SafeAreaView>
       <View style={{flexDirection: 'row'}}>
@@ -37,6 +46,8 @@ const BottomTabBar = ({state, descriptors, navigation}: any) => {
             });
           };
 
+          const icon = icons[label] || 'circle';
+
           return (
             <Pressable
               key={index}
@@ -51,6 +62,11 @@ const BottomTabBar = ({state, descriptors, navigation}: any) => {
               onLongPress={onLongPress}
               style={styles.container}>
               <View style={styles.buttonContainer}>
+                <Icon
+                  name={icon}
+                  size={24}
+                  color={isFocused ? 'yellow' : '#222'}
+                />
                 <Text style={{color: isFocused ? 'yellow' : '#222'}}>
                   {label}
                 </Text>
@@ -73,9 +89,18 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     backgroundColor: 'orange',
     height: 70,
+    paddingHorizontal: 5,
   },
   buttonContainer: {
-    backgroundColor: 'skyblue',
+    backgroundColor: 'orangered',
+    borderColor: 'black',
+    borderWidth: 1,
+    borderBottomWidth: 0,
+    borderTopLeftRadius: 10,
+    borderTopRightRadius: 10,
+    marginTop: 15,
+    height: '100%',
+    width: '100%',
     alignItems: 'center',
     justifyContent: 'center',
   },

@@ -11,6 +11,8 @@ import Calories from '../screens/calories/Index';
 import Distance from '../screens/distance/Index';
 import Map from '../screens/map/Index';
 import Elevation from '../screens/elevation/Index';
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+
 // import {Pressable, Text} from 'react-native';
 // import {theme} from '../styles/styles';
 
