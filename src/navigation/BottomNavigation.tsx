@@ -1,5 +1,7 @@
 import React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import {useNavigation} from '@react-navigation/native';
+import {Pressable} from 'react-native';
 
 //types
 import {BottomParamList} from '../types/navigation';
@@ -13,53 +15,33 @@ import Map from '../screens/map/Index';
 import Elevation from '../screens/elevation/Index';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
-// import {Pressable, Text} from 'react-native';
-// import {theme} from '../styles/styles';
-
 const Tab = createBottomTabNavigator<BottomParamList>();
 
-// const MenuButton = ({navigation}: {navigation: any}) => (
-//   <Pressable accessibilityRole="button" onPress={() => navigation.openDrawer()}>
-//     {/* <Image
-//       source={require('../assets/placeholders/hamburger.jpg')}
-//       style={{
-//         width: 45,
-//         height: 45,
-//         borderRadius: 45 / 2,
-//         marginRight: 23,
-//       }}
-//     /> */}
-//     <Text>Menu</Text>
-//   </Pressable>
-// );
-
 const BottomNavigation: React.FC = (): JSX.Element => {
+  const navigation = useNavigation();
+
   return (
     <Tab.Navigator
       initialRouteName="Main"
-      // swipeEnabled={true}
+      swipeEnabled={true}
       tabBar={props => <BottomTabBar {...props} />}
-      screenOptions={{
-        headerShown: false,
-      }}>
-      {/* screenOptions={({navigation}) => ({
-        headerRight: () => <MenuButton navigation={navigation} />,
-        headerTitleAlign: 'center',
-        headerTitleStyle: {
-          fontFamily: 'Montserrat',
-          fontWeight: '700',
-          fontSize: 16,
-          color: 'yellow',
-          lineHeight: 26,
-        },
-        headerShown: false,
-        })}> */}
+      screenOptions={() => ({
+        headerShown: true,
+        headerRight: () => (
+          <Pressable
+            accessibilityRole="button"
+            style={{marginRight: 20}}
+            onPress={() => navigation.openDrawer()}>
+            <MaterialCommunityIcons name="menu" size={24} color="pink" />
+          </Pressable>
+        ),
+      })}>
       <Tab.Screen
         name="Calories"
         component={Calories}
         options={{
           headerStyle: {
-            backgroundColor: 'maroon',
+            backgroundColor: 'orangered',
           },
           tabBarAccessibilityLabel: 'Calories screen',
         }}
@@ -70,7 +52,7 @@ const BottomNavigation: React.FC = (): JSX.Element => {
         component={Distance}
         options={{
           headerStyle: {
-            backgroundColor: 'maroon',
+            backgroundColor: 'orangered',
           },
           tabBarAccessibilityLabel: 'Distance screen',
         }}
@@ -80,7 +62,7 @@ const BottomNavigation: React.FC = (): JSX.Element => {
         component={Main}
         options={{
           headerStyle: {
-            backgroundColor: 'maroon',
+            backgroundColor: 'orangered',
           },
           tabBarAccessibilityLabel: 'Main screen',
         }}
@@ -90,7 +72,7 @@ const BottomNavigation: React.FC = (): JSX.Element => {
         component={Elevation}
         options={{
           headerStyle: {
-            backgroundColor: 'maroon',
+            backgroundColor: 'orangered',
           },
           tabBarAccessibilityLabel: 'Elevation screen',
         }}
@@ -100,7 +82,7 @@ const BottomNavigation: React.FC = (): JSX.Element => {
         component={Map}
         options={{
           headerStyle: {
-            backgroundColor: 'maroon',
+            backgroundColor: 'orangered',
           },
           tabBarAccessibilityLabel: 'Map screen',
         }}

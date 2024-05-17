@@ -7,7 +7,7 @@ import {NativeStackScreenProps} from '@react-navigation/native-stack';
 
 export type RootStackParamList = {
   Drawer: NavigatorScreenParams<DrawerParamList>;
-  Login: undefined;
+  Contact: undefined;
 };
 
 export type DrawerParamList = {
@@ -15,7 +15,7 @@ export type DrawerParamList = {
 };
 
 export type BottomParamList = {
-  Main: undefined;
+  'Main screen': undefined;
   Calories: undefined;
   Distance: undefined;
   Elevation: undefined;
@@ -32,7 +32,7 @@ export type DrawerScreenNavigation = NativeStackScreenProps<
   'Drawer'
 >;
 
-export type LoginScreenNavigation = NativeStackScreenProps<
+export type ContactScreenNavigation = NativeStackScreenProps<
   RootStackParamList,
-  'Login'
+  'Contact'
 >;

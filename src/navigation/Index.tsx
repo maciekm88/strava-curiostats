@@ -8,8 +8,10 @@ import {RootStackParamList} from '../types/navigation';
 
 //Components
 import BottomNavigation from './BottomNavigation';
-// import DrawerNavigation from './DrawerNavigation';
-// import Login from '../components/Login';
+import DrawerNavigation from './DrawerNavigation';
+
+//Screens
+import Contact from '../screens/contact/Index';
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
@@ -18,7 +20,7 @@ const Index: React.FC = (): JSX.Element | null => {
     <SafeAreaProvider>
       <NavigationContainer>
         <Stack.Navigator
-          initialRouteName="BottomNavigation"
+          initialRouteName="Main"
           screenOptions={{
             headerStyle: {
               backgroundColor: '#f4511e',
@@ -28,23 +30,23 @@ const Index: React.FC = (): JSX.Element | null => {
               fontWeight: 'bold',
             },
           }}>
-          {/* <Stack.Screen
+          <Stack.Screen
             name="Drawer"
             component={DrawerNavigation}
             options={{headerShown: false}}
           />
-          <Stack.Screen name="Login" component={Login} /> */}
           <Stack.Screen
-            name="BottomNavigation"
-            component={BottomNavigation}
-            options={{headerShown: false}}
+            name="Contact"
+            component={Contact}
+            options={{
+              headerBackTitleVisible: false, // This will hide the "Drawer" text on iOS
+            }}
           />
-
-          {/* <Stack.Group
+          <Stack.Group
             screenOptions={({route}) => ({
               title: route.params.title,
             })}
-          /> */}
+          />
         </Stack.Navigator>
       </NavigationContainer>
     </SafeAreaProvider>

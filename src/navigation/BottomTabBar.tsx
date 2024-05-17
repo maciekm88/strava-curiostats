@@ -1,11 +1,11 @@
 import React from 'react';
-import {Pressable, StyleSheet, Text, View} from 'react-native';
+import {Pressable, StyleSheet, View} from 'react-native';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 const BottomTabBar = ({state, descriptors, navigation}: any) => {
   const icons = {
-    Main: 'domain',
+    Main: 'home',
     Calories: 'food',
     Distance: 'map-marker-distance',
     Elevation: 'elevation-rise',
@@ -67,9 +67,9 @@ const BottomTabBar = ({state, descriptors, navigation}: any) => {
                   size={24}
                   color={isFocused ? 'yellow' : '#222'}
                 />
-                <Text style={{color: isFocused ? 'yellow' : '#222'}}>
+                {/* <Text style={{color: isFocused ? 'yellow' : '#222'}}>
                   {label}
-                </Text>
+                </Text> */}
               </View>
             </Pressable>
           );
