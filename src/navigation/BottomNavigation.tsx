@@ -1,4 +1,5 @@
 import React from 'react';
+// import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {useNavigation} from '@react-navigation/native';
 import {Pressable} from 'react-native';
@@ -15,6 +16,7 @@ import Map from '../screens/map/Index';
 import Elevation from '../screens/elevation/Index';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
+// const Tab = createMaterialTopTabNavigator<BottomParamList>();
 const Tab = createBottomTabNavigator<BottomParamList>();
 
 const BottomNavigation: React.FC = (): JSX.Element => {
@@ -23,16 +25,16 @@ const BottomNavigation: React.FC = (): JSX.Element => {
   return (
     <Tab.Navigator
       initialRouteName="Main"
-      swipeEnabled={true}
       tabBar={props => <BottomTabBar {...props} />}
       screenOptions={() => ({
         headerShown: true,
+        headerTintColor: 'yellow',
         headerRight: () => (
           <Pressable
             accessibilityRole="button"
-            style={{marginRight: 20}}
+            style={{ marginRight: 20 }}
             onPress={() => navigation.openDrawer()}>
-            <MaterialCommunityIcons name="menu" size={24} color="pink" />
+            <MaterialCommunityIcons name="menu" size={24} color="navy" />
           </Pressable>
         ),
       })}>

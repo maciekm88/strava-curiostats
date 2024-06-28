@@ -5,9 +5,9 @@ import {View, Text, StyleSheet} from 'react-native';
 const Index: React.FC = (): JSX.Element | null => {
   return (
     <>
-      <SafeAreaView>
-        <View style={styles.container}>
-          <Text style={styles.text}>Calories screen</Text>
+      <SafeAreaView style={styles.container}>
+        <View>
+          <Text style={styles.text}>Strava curiostats Calories SCREEN</Text>
         </View>
       </SafeAreaView>
     </>
@@ -24,6 +24,7 @@ const styles = StyleSheet.create({
   text: {
     fontSize: 24,
     fontWeight: '600',
+    marginBottom: 24,
     color: 'orangered',
   },
 });

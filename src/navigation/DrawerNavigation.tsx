@@ -53,8 +53,8 @@ const DrawerNavigation: React.FC = (): JSX.Element | null => {
         drawerType: 'front',
         swipeEnabled: true,
         drawerStyle: {
-          backgroundColor: '#C4C4C4',
-          width: '30%',
+          backgroundColor: 'blanchedalmond',
+          width: '40%',
         },
       }}>
       <Drawer.Screen
@@ -71,18 +71,19 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'space-around',
     alignItems: 'stretch',
-    marginTop: 20,
+    marginTop: 5,
   },
   backButton: {
     alignItems: 'center',
     paddingVertical: 10,
-    backgroundColor: '#7B7B7B',
+    backgroundColor: 'gray',
+    marginBottom: 10,
     marginHorizontal: 10,
   },
   contactButton: {
     alignItems: 'center',
     paddingVertical: 10,
-    backgroundColor: '#4FCBC2',
+    backgroundColor: 'orangered',
     marginHorizontal: 10,
   },
 });
